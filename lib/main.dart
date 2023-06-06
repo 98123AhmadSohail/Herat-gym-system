@@ -107,13 +107,13 @@ class _RootPageState extends State<RootPage> {
                     child: TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Search for Gym',
+                         hintText: 'Search for Gym',
                         hintStyle: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
-                          color: Colors.grey.withOpacity(0.8),
+                           color: Colors.grey.withOpacity(0.8),
                         ),
-                      ),
+                       ),
                     ),
                   ),
                 ],
@@ -125,3 +125,4 @@ class _RootPageState extends State<RootPage> {
     );
   }
 }
+ 
