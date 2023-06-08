@@ -32,9 +32,9 @@ class _RootPageState extends State<RootPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       'Hello Amir',
                       style: TextStyle(
@@ -75,6 +75,8 @@ class _RootPageState extends State<RootPage> {
               ],
             ),
           ),
+          const SizedBox(height: 10),
+          //window for search
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Container(
@@ -119,6 +121,24 @@ class _RootPageState extends State<RootPage> {
                 ],
               ),
             ),
+          ),
+          //  popular gyms
+          const SizedBox(
+            height: 20,
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Text(
+              'Popular Gyms',
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            height: 220,
+            width: double.infinity,
           ),
         ],
       ),
