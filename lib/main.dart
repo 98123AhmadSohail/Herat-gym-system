@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'models/Gym.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,9 +33,9 @@ class _RootPageState extends State<RootPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       'Hello Amir',
                       style: TextStyle(
@@ -118,6 +119,107 @@ class _RootPageState extends State<RootPage> {
                   ),
                 ],
               ),
+            ),
+          ),
+          //popular hotel
+          const SizedBox(
+            height: 20.0,
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 20.0),
+            child: Text(
+              'Popular Gyms',
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20.0),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            height: 220,
+            width: double.infinity,
+            child: ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              scrollDirection: Axis.horizontal,
+              itemCount: Gyms.length,
+              itemBuilder: (BuildContext context, index) {
+                return Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 10.0),
+                  height: 200,
+                  width: 170,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        offset: Offset(0.0, 4.0),
+                        blurRadius: 10.0,
+                      )
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        height: 140.0,
+                        width: 170.0,
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                          image: DecorationImage(
+                            image: AssetImage(Gyms[index].imageUrl),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10, top: 10),
+                        child: Text(
+                          Gyms[index].title,
+                          style: const TextStyle(fontSize: 16.0),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text(
+                          Gyms[index].description,
+                          style: const TextStyle(
+                              fontSize: 13.0, color: Colors.grey),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 10.0, right: 10.0, top: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(
+                              '${Gyms[index].price} af / hour',
+                              style: const TextStyle(color: Colors.blue),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Text(
+                                  '${Gyms[index].rating}',
+                                  style: const TextStyle(color: Colors.blue),
+                                ),
+                                const Icon(
+                                  Icons.star,
+                                  color: Colors.blue,
+                                  size: 16.0,
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
             ),
           ),
         ],
