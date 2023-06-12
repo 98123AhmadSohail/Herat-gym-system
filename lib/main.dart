@@ -27,6 +27,22 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+      ),
       body: ListView(
         children: [
           Padding(
@@ -376,7 +392,7 @@ _GymPackage(int index) {
           ),
           Positioned(
             bottom: 50,
-            left: 300,
+            left: 285,
             child: Center(
               child: Transform.rotate(
                 angle: pi / -2,
@@ -396,7 +412,7 @@ _GymPackage(int index) {
                   ),
                   child: const Center(
                     child: Text(
-                      'Booking now',
+                      'Book now',
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.white,
