@@ -64,7 +64,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
        SizedBox(
          height: 20.0,
        ),
-        Padding(padding: const EdgeInse.only(left: 20.0, top: 20.0),
+
+        Padding(padding: const EdgeInsets.only(left: 20.0, top: 20.0),
           child: Text(
             widget.gym.title,
             style: TextStyle(
@@ -86,8 +87,75 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   fontSize: 16.0,
                 ),
               ),
+              SizedBox(
+                width: 5,
+              ),
+              Text(
+              '-show im map',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
             ],
           ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20.0, top: 40.0),
+          child: Text(' Lorem ipsum dolor, sit amet consectetur adipisicing elit.\n '
+              'Laudantium maiores similique ipsa nemo soluta, perspiciatis\n esse ab voluptatem inventore eius laboriosam,'
+              ' doloremque voluptatum aut labore?\n Cupiditate dolorum odio molestiae unde! ',
+          style: TextStyle(
+         color: Colors.grey,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left:20.0,top:50.0),
+          child: Row(
+          children: <Widget>[
+            Expanded(
+              child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                     Text('Price'),
+                     Text('\$${widget.gym.price}'),
+    ],
+    ),
+            ),
+    Expanded(
+      child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      Text(
+    'Price',
+    style: TextStyle(color: Colors.grey,
+    fontSize: 16.0,
+    fontWeight: FontWeight.w500,
+    ),
+    ),
+      SizedBox(
+    height: 10.0,
+    ),
+
+
+
+      Text('\$${widget.gym.price}'),
+      ],
+      ),
+    ),
+    Expanded(
+      child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      Text('Price'),
+      Text('\$${widget.gym.price}'),
+      ],
+      ),
+    ),
+    
+    ],
+    ),
         ),
       ],
     ),

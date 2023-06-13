@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:herat_gym_system/hotel_details_screen.dart';
-import 'models/Gym.dart';
+import 'package:herat_gym_system/gym_details_screen.dart';
+import 'models/gym.dart';
 import 'dart:math';
 
 void main() {
@@ -51,7 +51,7 @@ class _RootPageState extends State<RootPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -276,7 +276,7 @@ class _RootPageState extends State<RootPage> {
                 Text(
                   'View all',
                   style: TextStyle(fontSize: 18, color: Colors.blue),
-                )
+                ),
               ],
             ),
           ),
