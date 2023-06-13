@@ -151,6 +151,9 @@ class _RootPageState extends State<RootPage> {
               'Popular Gyms',
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
             ),
+
+
+
           ),
           const SizedBox(
             height: 20,
