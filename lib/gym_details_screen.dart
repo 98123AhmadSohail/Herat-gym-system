@@ -4,13 +4,10 @@ import 'package:herat_gym_system/models/gym.dart';
 
 class DetailsScreen extends StatefulWidget {
 final Gym gym;
-
 const DetailsScreen({required this.gym});
-
-  @override
+ @override
   _DetailsScreenState createState() => _DetailsScreenState();
 }
-
 class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
@@ -58,13 +55,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
              ),
               ),
-            )
+            ),
           ],
         ),
        SizedBox(
          height: 20.0,
        ),
-
         Padding(padding: const EdgeInsets.only(left: 20.0, top: 20.0),
           child: Text(
             widget.gym.title,
@@ -102,9 +98,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         ),
         Padding(
           padding: const EdgeInsets.only(left: 20.0, top: 40.0),
-          child: Text(' Lorem ipsum dolor, sit amet consectetur adipisicing elit.\n '
-              'Laudantium maiores similique ipsa nemo soluta, perspiciatis\n esse ab voluptatem inventore eius laboriosam,'
-              ' doloremque voluptatum aut labore?\n Cupiditate dolorum odio molestiae unde! ',
+          child: Text(' Lorem ipsum dolor, sit amet consectetur adipisicing elit.\n ''Laudantium maiores similique ipsa nemo soluta, perspiciatis\n esse ab voluptatem inventore eius laboriosam,'' doloremque voluptatum aut labore?\n Cupiditate dolorum odio molestiae unde! ',
           style: TextStyle(
          color: Colors.grey,
             ),
@@ -129,7 +123,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
     children: <Widget>[
       Text(
     'Price',
-    style: TextStyle(color: Colors.grey,
+    style: TextStyle(
+      color: Color(0xFF003AA8).withOpacity(0.5),
     fontSize: 16.0,
     fontWeight: FontWeight.w500,
     ),
@@ -137,23 +132,128 @@ class _DetailsScreenState extends State<DetailsScreen> {
       SizedBox(
     height: 10.0,
     ),
-
-
-
-      Text('\$${widget.gym.price}'),
+      Text(
+          '\$${widget.gym.price}',
+          style: TextStyle(
+        fontWeight: FontWeight.w600,
+            color: Color(0xFF003AA8).withOpacity(0.9),
+      ),
+      ),
       ],
       ),
     ),
+    //Review
     Expanded(
       child: Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
-      Text('Price'),
-      Text('\$${widget.gym.price}'),
+      Text(
+          'Reviews',
+              style: TextStyle(
+                color: Color(0xFF003AA8).withOpacity(0.5),
+         fontSize: 16.0,
+        fontWeight: FontWeight.w500,
+      ),
+      ),
+      SizedBox(
+        height: 10.0,
+      ),
+      Row (
+        children: [
+          Text('${widget.gym.rating}',
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+          color: Colors.blue,
+          ),
+          ),
+          Icon(Icons.star, size:14, color: Colors.blue),
+          Icon(Icons.star, size:14, color: Colors.blue),
+          Icon(Icons.star_half, size:14, color: Colors.blue),
+
+        ],
+      ),
       ],
       ),
     ),
-    
+            Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children:<Widget>[
+                Text('Recently booked',
+                  style: TextStyle(
+                    color: Color(0xFF003AA8).withOpacity(0.5),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500,
+                ),
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                  height: 30,
+                      width: 80,
+                ),
+
+
+                    
+                    Positioned(
+                      left: 20,
+                      child: Container(
+                      height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.blue,
+                      )
+                    ),
+                    ),
+                    Positioned(
+                      left: 30,
+                      child: Container(
+                          height: 20,
+                          width: 20,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Colors.redAccent,
+                          )
+                      ),
+                    ),
+                    Positioned(
+                      left: 40,
+                      child: Container(
+                          height: 20,
+                          width: 20,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Colors.black38,
+                          )
+                      ),
+                    ),
+                    Positioned(
+                      left: 50,
+                      child: Container(
+                          height: 20,
+                          width: 20,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Color(0xff003AAB),
+                          ),
+                        child: Text(
+                          '+3',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                        ),
+                        ),
+                      ),
+                    ),
+              ],
+                ),
+              ],
+            ),
+            ),
     ],
     ),
         ),

@@ -190,7 +190,7 @@ class _RootPageState extends State<RootPage> {
                           color: Colors.black12,
                           offset: Offset(0.0, 4.0),
                           blurRadius: 10.0,
-                        )
+                        ),
                       ],
                     ),
                     child: Column(
