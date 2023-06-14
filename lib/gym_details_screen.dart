@@ -1,3 +1,4 @@
+import 'dart:developer';
  import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:herat_gym_system/models/gym.dart';
@@ -195,9 +196,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   height: 30,
                       width: 80,
                 ),
-
-
-                    
                     Positioned(
                       left: 20,
                       child: Container(
@@ -205,7 +203,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       width: 20,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Colors.blue,
+                        image: DecorationImage(
+                            image: AssetImage(Gyms[0].imageUrl),
+                          fit: BoxFit.cover,
+                        ),
                       )
                     ),
                     ),
@@ -216,7 +217,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           width: 20,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: Colors.redAccent,
+                            image: DecorationImage(
+                              image: AssetImage(Gyms[1].imageUrl),
+                              fit: BoxFit.cover,
+                            ),
                           )
                       ),
                     ),
@@ -227,7 +231,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           width: 20,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: Colors.black38,
+                            image: DecorationImage(
+                              image: AssetImage(Gyms[2].imageUrl),
+                              fit: BoxFit.cover,
+                            ),
                           )
                       ),
                     ),
@@ -257,6 +264,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
     ],
     ),
         ),
+        Text(
+          'Aminitis',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            letterSpacing: 1,
+          ),
+         ),
       ],
     ),
     );
