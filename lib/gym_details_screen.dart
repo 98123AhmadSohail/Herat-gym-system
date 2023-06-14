@@ -1,16 +1,27 @@
 import 'dart:developer';
+
  import 'package:flutter/material.dart';
+
 import 'package:flutter/cupertino.dart';
+
 import 'package:herat_gym_system/models/gym.dart';
 
 class DetailsScreen extends StatefulWidget {
-final Gym gym;
-const DetailsScreen({required this.gym});
- @override
+
+  final Gym gym;
+
+  const DetailsScreen({required this.gym});
+
+  @override
+
   _DetailsScreenState createState() => _DetailsScreenState();
 }
 class _DetailsScreenState extends State<DetailsScreen> {
+
   @override
+
+
+
   Widget build(BuildContext context) {
     return Scaffold(
     body: Column(
@@ -264,14 +275,64 @@ class _DetailsScreenState extends State<DetailsScreen> {
     ],
     ),
         ),
-        Text(
-          'Aminitis',
-          style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-            letterSpacing: 1,
-          ),
+       Padding(
+         padding: const EdgeInsets.only(left: 50.0,top: 15.0, bottom: 5),
+         child: Row(
+           children: <Widget>[
+             Container(
+               height: 60,
+               width: 60,
+               decoration: BoxDecoration(
+                 color: Colors.white,
+                 borderRadius: BorderRadius.circular(10.0),
+                 boxShadow: [
+                   BoxShadow(
+                     color: Colors.black26,
+                     offset: Offset(0.0,2.0),
+                     blurRadius: 6.0,
+                   ),
+                 ],
+               ),
+               child: Center(
+                 child: Icon(
+                   Icons.favorite_border,
+                   color: Color(0xFF003AA8).withOpacity(0.5),
+                   size: 40.0,
+                 )
+               )
+             ),
+             SizedBox(
+               width: 40,
+             ),
+             Container(
+               width: 250,
+               height: 60,
+               decoration: BoxDecoration(
+               color: Color(0xFF003AA8),
+                 borderRadius: BorderRadius.circular(10.0),
+                 boxShadow: [
+                 BoxShadow(
+                   color: Colors.black26,
+                   offset: Offset(0.0, 2.0),
+                   blurRadius: 6.0,
+                 ),
+                   ],
+               ),
+               child: Center(
+                 child: Text(
+                   'Book now',
+                   style: TextStyle(
+                     fontSize: 20.0,
+                     fontWeight: FontWeight.bold,
+                     color: Colors.white,
+
+                   ),
+                 ),
+               ),
+             ),
+           ],
          ),
+       ),
       ],
     ),
     );
